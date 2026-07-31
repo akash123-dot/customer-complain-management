@@ -1,7 +1,7 @@
 from pydantic_settings import BaseSettings
 from langchain_groq import ChatGroq
-from langchain_openai import ChatOpenAI
-from langchain_google_genai import ChatGoogleGenerativeAI
+# from langchain_openai import ChatOpenAI
+# from langchain_google_genai import ChatGoogleGenerativeAI
 
 
 
@@ -30,35 +30,35 @@ llama-3.3-70b-versatile (High Accuracy): Use for Complex Extraction, Initial Ris
 """
 
 
-# main_model = ChatGroq(
-#     api_key= settings.api_key,
-#     model="llama-3.1-8b-instant",
-#     temperature=0.0,
-#     max_retries=2,
-# )
-
-
-# analysis_model = ChatGroq(
-#     api_key=settings.api_key,
-#     model="llama-3.1-8b-instant",
-#     temperature=0.0,
-#     max_retries=2,
-# )
-
-
-main_model = ChatOpenAI(
-    api_key=settings.chat_api_key,
-    model="gpt-4o-mini",
+main_model = ChatGroq(
+    api_key= settings.api_key,
+    model="llama-3.1-8b-instant",
     temperature=0.0,
     max_retries=2,
 )
 
-analysis_model = ChatOpenAI(
-    api_key=settings.chat_api_key,
-    model="gpt-4o-mini",
+
+analysis_model = ChatGroq(
+    api_key=settings.api_key,
+    model="llama-3.1-8b-instant",
     temperature=0.0,
     max_retries=2,
 )
+
+
+# main_model = ChatOpenAI(
+#     api_key=settings.chat_api_key,
+#     model="gpt-4o-mini",
+#     temperature=0.0,
+#     max_retries=2,
+# )
+
+# analysis_model = ChatOpenAI(
+#     api_key=settings.chat_api_key,
+#     model="gpt-4o-mini",
+#     temperature=0.0,
+#     max_retries=2,
+# )
 
 
 # main_model = ChatGoogleGenerativeAI(
