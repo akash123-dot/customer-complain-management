@@ -23,19 +23,12 @@ An asynchronous, multi-agent AI system designed for pharmaceutical Quality Assur
 The core AI engine uses a **Supervisor-Worker Pattern** to orchestrate workflows efficiently:
 
 
-                      +-------------------------+
-                      |    Supervisor Agent     |
-                      |  (Router & Orchestrator)|
-                      +------------+------------+
-                                   |
-      +----------------------------+----------------------------+
-      |                            |                            |
-      v                            v                            v
-+-------------------+        +-------------------+        +-------------------+
-|  Extractor Agent  |        |  Mutator Agent    |        |  Risk Assessment  |
-| (Structured Log)  |        | (Targeted Edits)  |        |       Agent       |
-+-------------------+        +-------------------+        +-------------------+
-
+```mermaid
+graph TD
+    A[Supervisor Agent<br/><i>Router & Orchestrator</i>] --> B[Extractor Agent<br/><i>Structured Log</i>]
+    A --> C[Mutator Agent<br/><i>Targeted Edits</i>]
+    A --> D[Risk Assessment Agent<br/><i>Defect Analysis</i>]
+```
 
 
 ### Agent Roles:
