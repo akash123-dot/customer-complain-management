@@ -15,6 +15,8 @@ async def lifespan(app: FastAPI):
     
     yield
 
+    await engine.dispose()
+
 
 app = FastAPI(
     title="Complain Management System",
